@@ -25,7 +25,7 @@ export const Header = component$(({ items }: HeaderProps) => {
       </div>
       <nav>
         <ul class='flex gap-16'>
-          {items.map(item => <HeaderItem key={item.label} href={item.href} label={item.label} />)}
+          {items.map(item => <li key={item.label}><HeaderItem href={item.href} label={item.label} /></li>)}
         </ul>
       </nav>
       <div>

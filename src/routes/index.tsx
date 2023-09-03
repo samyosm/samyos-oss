@@ -75,13 +75,6 @@ export default component$(() => {
         </Details>
       </Section>
 
-      <div class='w-fit mx-auto'>
-        <div class='space-x-6'>
-          <Link href='/contribute' class='button w-fit'>Contribute</Link>
-          <Link href='/lessons' class='soft-button w-fit'>Learn</Link>
-        </div>
-      </div>
-
     </div>
   );
 });
