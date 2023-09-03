@@ -1,10 +1,15 @@
 ---
-title: Hello, world! 
+title: Open Source History
 ---
 
-# Lessons 
+# Open Source History 
 
-This page hasn't het been built.
+Since the beginning, open source software have allowed people and organization alike to benefit from the wonders of computers.
+While it might not be obvious at first, the internet is the project of millions of developers in all corners of the world.
+Indeed, if it wasn't for the many open source project the internet is built upon, you likely wouldn't be reading this.
 
-## Heading
-Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
+This article will present you how the open source movement began, 
+the difficulties it encountered, 
+and how we wouldn't have the technology we now have without it.
+
+## 1950s
