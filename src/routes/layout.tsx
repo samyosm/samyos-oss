@@ -1,17 +1,34 @@
 import { component$, Slot } from "@builder.io/qwik";
-import type { RequestHandler } from "@builder.io/qwik-city";
-
-export const onGet: RequestHandler = async ({ cacheControl }) => {
-  // Control caching for this request for best performance and to reduce hosting costs:
-  // https://qwik.builder.io/docs/caching/
-  cacheControl({
-    // Always serve a cached response by default, up to a week stale
-    staleWhileRevalidate: 60 * 60 * 24 * 7,
-    // Max once every 5 seconds, revalidate on the server to get a fresh version of this page
-    maxAge: 5,
-  });
-};
+import { Link } from "@builder.io/qwik-city";
+import { Footer } from "~/components/footer/Footer";
+import { Header } from "~/components/header/Header";
 
 export default component$(() => {
-  return <Slot />;
+
+  const items = [
+    {
+      label: 'History',
+      href: '/history',
+    },
+    {
+      label: 'Lessons',
+      href: '/lessons',
+    },
+    {
+      label: 'Software',
+      href: '/software',
+    },
+  ]
+
+  return (
+    <div class='flex flex-col min-h-screen'>
+      <Header items={items} >
+        <Link href='/contribute' class='button'>Contribute</Link>
+      </Header>
+      <main class='h-full flex-1'>
+        <Slot />
+      </main>
+      <Footer />
+    </div>
+  );
 });
