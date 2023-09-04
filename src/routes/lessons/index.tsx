@@ -14,7 +14,7 @@ export default component$(() => {
   return (
     <div class='mt-32'>
       <Section title="Latest" class="prose">
-        {(JSON.parse(data.value) as any[]).map(item => item)}
+        {data.value}
       </Section>
     </div>
   )
