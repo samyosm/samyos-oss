@@ -45,7 +45,7 @@ export default component$(() => {
         </Pedestal>
       </Section>
 
-      <Section title="Frequently asked questions" class="space-y-12">
+      <Section title="Frequently asked questions" titleClass="text-center" class="space-y-12">
         <Details title="What is this website about?">
           <p>
             This website is about promoting the open source movement and ideology by various means.

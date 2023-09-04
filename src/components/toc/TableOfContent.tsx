@@ -13,8 +13,7 @@ export interface TOCHeadingProps {
 
 export const TOCHeading = component$((props: TOCHeadingProps) => {
   const levelStyle: { [key: number]: string } = {
-    1: 'text-neutral-900 font-medium text-xl',
-    2: 'ml-2 pt-6 text-base',
+    2: 'text-neutral-700 font-medium ml-2 pt-6 text-xl',
     3: 'ml-4 text-base'
   }
 
@@ -32,7 +31,7 @@ export const TOCHeading = component$((props: TOCHeadingProps) => {
 })
 
 export const TableOfContent = component$((props: TableOfContentProps) => {
-  const headings = props.headings.filter(h => h.level <= 3);
+  const headings = props.headings.filter(h => h.level <= 3 && h.level != 1);
   return (
     <div class='sticky top-32 space-y-4'>
       {headings.map(h => <TOCHeading key={h.id} heading={h} />)}
