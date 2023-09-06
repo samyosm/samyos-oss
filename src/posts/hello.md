@@ -1,6 +1,6 @@
 ---
 title: Why Internet Wouldn’t Exist Without Open Source?
-description: "Since the beginning, open-source software has allowed people and organizations alike to benefit from the wonders of computers."
+description: "Open-source software has allowed people and organizations alike to benefit from the wonders of computers."
 ---
 
 # Why Internet Wouldn’t Exist Without Open Source?
