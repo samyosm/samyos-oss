@@ -26,11 +26,11 @@ export default component$(() => {
         {data.value.map(post => (
           <Link
             key={post.title}
-            class='p-7 rounded-2xl border-4 border-neutral-200 shadow space-y-6 leading-loose'
+            class='p-7 rounded-2xl border-4 border-neutral-200 shadow space-y-6 leading-loose group hover:border-sky-600'
             href={post.href}
           >
-            <p class='text-2xl text-neutral-900 font-medium leading-relaxed'>{post.title}</p>
-            <p>{post.description}</p>
+            <p class='text-2xl text-neutral-900 font-medium leading-relaxed group-hover:text-sky-600'>{post.title}</p>
+            <p class='group-hover:text-sky-600'>{post.description}</p>
           </Link>
         ))}
       </Section>
