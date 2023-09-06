@@ -6,18 +6,19 @@ import { Header } from "~/components/header/Header";
 export default component$(() => {
 
   const items = [
-    {
-      label: 'History',
-      href: '/history',
-    },
+    // {
+    //   label: 'History',
+    //   href: '/history',
+    // },
+    //
     {
       label: 'Lessons',
       href: '/lessons',
     },
-    {
-      label: 'Software',
-      href: '/software',
-    },
+    // {
+    //   label: 'Software',
+    //   href: '/software',
+    // },
   ]
 
   return (

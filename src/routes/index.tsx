@@ -6,9 +6,9 @@ import { Section } from "~/components/section/Section";
 
 export default component$(() => {
   return (
-    <div class='h-full bg-white text-lg py-64 space-y-56'>
+    <div class='h-full bg-white text-lg py-16 lg:py-64 space-y-56'>
 
-      <div class='w-full max-w-2xl text-center mx-auto space-y-10'>
+      <div class='px-5 w-full max-w-2xl text-center mx-auto space-y-10'>
         <h1 class='font-medium text-5xl text-neutral-900'>Me, You, We!</h1>
         <p class='text-2xl leading-loose'>
           We help people learn about the open source movement and guide them to their first contribution.
@@ -19,7 +19,7 @@ export default component$(() => {
         </div>
       </div>
 
-      <Section title="Benefits" class='grid grid-cols-2 gap-x-20 gap-y-24'>
+      <Section title="Benefits" class='px-10 grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-24'>
         <Pedestal title="Security" emoji="🔒">
           Open source tend to lead to less vulnerabilities due to the many people that search to solve them.
         </Pedestal>
@@ -45,7 +45,7 @@ export default component$(() => {
         </Pedestal>
       </Section>
 
-      <Section title="Frequently asked questions" titleClass="text-center" class="space-y-12">
+      <Section title="Frequently asked questions" titleClass="text-center" class="px-10 space-y-12">
         <Details title="What is this website about?">
           <p>
             This website is about promoting the open source movement and ideology by various means.

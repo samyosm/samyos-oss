@@ -21,8 +21,8 @@ export const useLoader = routeLoader$(async () => {
 export default component$(() => {
   const data = useLoader();
   return (
-    <div class='mt-32'>
-      <Section title="Latest" class="grid grid-cols-2 gap-12">
+    <div class='mt-32 px-10'>
+      <Section title="Latest" class="grid grid-cols-1 md:grid-cols-2 gap-12">
         {data.value.map(post => (
           <Link
             key={post.title}
