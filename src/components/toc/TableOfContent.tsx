@@ -33,7 +33,7 @@ export const TOCHeading = component$((props: TOCHeadingProps) => {
 export const TableOfContent = component$((props: TableOfContentProps) => {
   const headings = props.headings.filter(h => h.level <= 3 && h.level != 1);
   return (
-    <div class='sticky top-32 space-y-4'>
+    <div class='sticky top-32 space-y-4 max-w-md'>
       {headings.map(h => <TOCHeading key={h.id} heading={h} />)}
     </div>
   )
