@@ -15,6 +15,10 @@ export default component$(() => {
       label: 'Lessons',
       href: '/lessons',
     },
+    {
+      label: 'Contribute',
+      href: '/contribute',
+    },
     // {
     //   label: 'Software',
     //   href: '/software',
