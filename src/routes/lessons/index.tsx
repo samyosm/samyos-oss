@@ -1,20 +1,38 @@
 import { component$ } from "@builder.io/qwik";
-import { routeLoader$ } from "@builder.io/qwik-city";
+import { Link, routeLoader$ } from "@builder.io/qwik-city";
 import { Section } from "~/components/section/Section";
 
-export const useBlogPost = routeLoader$(async () => {
-  const data = await import('/src/_posts/hello.md');
+export const useLoader = routeLoader$(async () => {
+  const modules = import.meta.glob('/src/posts/*.md', { eager: true });
+  const posts = [];
 
-  // @ts-ignore
-  return JSON.stringify(data.default().props.children.type().children);
+  for (const path in modules) {
+    const raw = modules[path] as any;
+    posts.push({
+      title: raw.frontmatter?.title || raw.headings.filter((t: any) => t.level === 1)[0].text as string,
+      description: raw.frontmatter?.description as string | undefined,
+      href: path.split('/')[3].replace('.md', ''),
+    });
+  }
+
+  return posts;
 });
 
 export default component$(() => {
-  const data = useBlogPost();
+  const data = useLoader();
   return (
     <div class='mt-32'>
-      <Section title="Latest" class="prose">
-        {data.value}
+      <Section title="Latest" class="grid grid-cols-2 gap-12">
+        {data.value.map(post => (
+          <Link
+            key={post.title}
+            class='p-7 rounded-2xl border-4 border-neutral-200 shadow space-y-6 leading-loose'
+            href={post.href}
+          >
+            <p class='text-2xl text-neutral-900 font-medium leading-relaxed'>{post.title}</p>
+            <p>{post.description}</p>
+          </Link>
+        ))}
       </Section>
     </div>
   )

@@ -1,11 +1,13 @@
-import { defineConfig } from "vite";
+import { PluginOption, ResolvedConfig, defineConfig } from "vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
 import { qwikCity } from "@builder.io/qwik-city/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(() => {
   return {
-    plugins: [qwikCity({ trailingSlash: true }), qwikVite(), tsconfigPaths()],
+    plugins: [qwikCity({
+      trailingSlash: true,
+    }), qwikVite({ devTools: { clickToSource: false } }), tsconfigPaths()],
     preview: {
       headers: {
         "Cache-Control": "public, max-age=600",
