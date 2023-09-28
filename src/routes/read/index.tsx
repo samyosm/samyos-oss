@@ -35,7 +35,7 @@ export const useLoader = routeLoader$(async () => {
     "./\\(article\\)/articles/**/*.md",
   );
   const stories = import.meta.glob(
-    "./\\(article\\)/stories/**/*.md",
+    "./\\(article\\)/stories/**/*.md*",
   );
 
   return [
