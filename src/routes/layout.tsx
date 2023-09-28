@@ -4,7 +4,6 @@ import { Footer } from "~/components/footer/Footer";
 import { Header } from "~/components/header/Header";
 
 export default component$(() => {
-
   const items = [
     // {
     //   label: 'History',
@@ -12,25 +11,25 @@ export default component$(() => {
     // },
     //
     {
-      label: 'Lessons',
-      href: '/lessons',
+      label: "Read",
+      href: "/read",
     },
     {
-      label: 'Contribute',
-      href: '/contribute',
+      label: "Contribute",
+      href: "/contribute",
     },
     // {
     //   label: 'Software',
     //   href: '/software',
     // },
-  ]
+  ];
 
   return (
-    <div class='flex flex-col min-h-screen'>
-      <Header items={items} >
-        <Link href='/contribute' class='button'>Contribute</Link>
+    <div class="flex flex-col">
+      <Header items={items}>
+        <Link href="/contribute" class="button">Contribute</Link>
       </Header>
-      <main class='h-full flex-1'>
+      <main class="h-full mt-16">
         <Slot />
       </main>
       <Footer />

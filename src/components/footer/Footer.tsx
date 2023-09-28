@@ -3,9 +3,9 @@ import { Link } from "@builder.io/qwik-city";
 
 export const Footer = component$(() => {
   return (
-    <footer class='p-5 mt-32 flex justify-between'>
+    <footer class="p-5 mt-16 flex justify-between">
       <p>© {new Date().getFullYear()} Copyright</p>
-      <Link href="/policy">Privacy Policy</Link>
+      <Link href="/read/policy">Privacy Policy</Link>
     </footer>
-  )
-})
+  );
+});
