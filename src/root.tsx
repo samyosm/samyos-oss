@@ -21,8 +21,6 @@ export default component$(() => {
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8688991445529001"
-          crossOrigin="anonymous" />
         <RouterHead />
       </head>
       <body lang="en">
