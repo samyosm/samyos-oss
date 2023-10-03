@@ -25,8 +25,6 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
     return notFound();
   }
 
-  console.log(post.headings);
-
   return (
     <div className="max-w-7xl mx-auto flex justify-between">
       <TableOfContent headings={post.headings} />

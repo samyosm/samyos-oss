@@ -35,7 +35,7 @@ export const TableOfContent = (props: TableOfContentProps) => {
   const headings = props.headings.filter((h) => h.level <= 3 && h.level != 1);
   return (
     <aside className="sticky top-32 w-full max-w-sm h-fit max-h-[36rem] overflow-y-auto hidden md:block rounded-lg">
-      <p className="bg-neutral-800 text-neutral-100 text-xl font-medium p-5">
+      <p className="bg-neutral-800 text-neutral-100 text-xl font-medium p-5 sticky top-0">
         Table Of Content
       </p>
       <ol className="bg-neutral-500 text-white py-5 pl-5 text-base list-['→'] [&>*]:pl-2">

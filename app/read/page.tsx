@@ -1,8 +1,8 @@
 import { Section } from "@/components/section/Section";
 import Link from "next/link";
 
-import { allStories, DocumentTypes } from "contentlayer/generated";
-import { allArticles } from "@/.contentlayer/generated/index.mjs";
+import { allArticles, allStories, DocumentTypes } from "contentlayer/generated";
+import { allPolicies } from "@/.contentlayer/generated/index.mjs";
 
 const getSections = () => {
   return [
@@ -13,6 +13,10 @@ const getSections = () => {
     {
       type: "Stories",
       documents: allStories,
+    },
+    {
+      type: "Policies",
+      documents: allPolicies,
     },
   ];
 };
