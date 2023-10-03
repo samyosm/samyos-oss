@@ -1,0 +1,57 @@
+import { Section } from "@/components/section/Section";
+import Link from "next/link";
+
+import { allStories, DocumentTypes } from "contentlayer/generated";
+import { allArticles } from "@/.contentlayer/generated/index.mjs";
+
+const getSections = () => {
+  return [
+    {
+      type: "Articles",
+      documents: allArticles,
+    },
+    {
+      type: "Stories",
+      documents: allStories,
+    },
+  ];
+};
+
+const ArticleLink = (props: DocumentTypes) => {
+  return (
+    <Link
+      className="p-7 rounded-2xl border-4 border-neutral-200 shadow group hover:border-sky-600"
+      href={props.url}
+    >
+      <article className="space-y-6 h-full">
+        <h2 className="text-xl md:text-xl text-neutral-900 font-medium leading-relaxed group-hover:text-sky-600 line-clamp-2">
+          {props.title}
+        </h2>
+        <p className="group-hover:text-sky-600 text-xl leading-loose line-clamp-3">
+          {props.description}
+        </p>
+      </article>
+    </Link>
+  );
+};
+
+export default function Page() {
+  return (
+    <div className="space-y-16 mx-8 md:mx-0">
+      {getSections().map((doc, idx) => (
+        <Section
+          key={idx}
+          title={doc.type}
+          class="grid grid-cols-1 md:grid-cols-2 gap-12"
+        >
+          {doc.documents.map((post, idx) => (
+            <ArticleLink
+              key={idx}
+              {...post as DocumentTypes}
+            />
+          ))}
+        </Section>
+      ))}
+    </div>
+  );
+}
