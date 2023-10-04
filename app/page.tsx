@@ -1,6 +1,6 @@
-import { Section } from "@/components/section/Section";
-import { Details } from "@/components/details/Details";
-import { Pedestal } from "@/components/pedestal/Pedestal";
+import {Section} from "@/components/section/Section";
+import {Details} from "@/components/details/Details";
+import {Pedestal} from "@/components/pedestal/Pedestal";
 import Link from "next/link";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
         </p>
         <div className="space-x-6">
           <Link href="/contribute" className="button w-fit">Contribute</Link>
-          <Link href="/lessons" className="soft-button w-fit">Learn</Link>
+          <Link href="/read" className="soft-button w-fit">Read</Link>
         </div>
       </div>
 

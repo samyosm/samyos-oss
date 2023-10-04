@@ -1,24 +1,24 @@
-import { Section } from "@/components/section/Section";
+import {Section} from "@/components/section/Section";
 import Link from "next/link";
 
-import { allArticles, allStories, DocumentTypes } from "contentlayer/generated";
-import { allPolicies } from "@/.contentlayer/generated/index.mjs";
+import {allDocuments, DocumentTypes} from "contentlayer/generated";
 
 const getSections = () => {
-  return [
-    {
-      type: "Articles",
-      documents: allArticles,
-    },
-    {
-      type: "Stories",
-      documents: allStories,
-    },
-    {
-      type: "Policies",
-      documents: allPolicies,
-    },
-  ];
+  const map = new Map<string, DocumentTypes[]>();
+
+  allDocuments.forEach((f) => {
+    if (!f.index) {
+      return;
+    }
+
+    if (!map.has(f.type)) {
+      map.set(f.type, [f]);
+    } else {
+      map.get(f.type)!.push(f);
+    }
+  });
+
+  return Array.from(map, ([name, documents]) => ({name, documents}));
 };
 
 const ArticleLink = (props: DocumentTypes) => {
@@ -28,7 +28,8 @@ const ArticleLink = (props: DocumentTypes) => {
       href={props.url}
     >
       <article className="space-y-6 h-full">
-        <h2 className="text-xl md:text-xl text-neutral-900 font-medium leading-relaxed group-hover:text-sky-600 line-clamp-2">
+        <h2
+          className="text-xl md:text-xl text-neutral-900 font-medium leading-relaxed group-hover:text-sky-600 line-clamp-2">
           {props.title}
         </h2>
         <p className="group-hover:text-sky-600 text-xl leading-loose line-clamp-3">
@@ -44,13 +45,13 @@ export default function Page() {
     <div className="space-y-16 mx-8 md:mx-0">
       {getSections().map((doc, idx) => (
         <Section
-          key={idx}
-          title={doc.type}
+          key={doc.name}
+          title={doc.name}
           class="grid grid-cols-1 md:grid-cols-2 gap-12"
         >
           {doc.documents.map((post, idx) => (
             <ArticleLink
-              key={idx}
+              key={post.title}
               {...post as DocumentTypes}
             />
           ))}
