@@ -1,6 +1,7 @@
 import "./globals.css";
 import type {Metadata} from "next";
 import {Lexend as Font} from "next/font/google";
+import {Analytics} from '@vercel/analytics/react';
 
 import {Footer} from "@/components/footer/Footer";
 import {Header} from "@/components/header/Header";
@@ -33,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body className={cn(font.className, 'flex flex-col')}>
+    <Analytics/>
     <Header items={items}>
       <Link href="/contribute" className="button">Contribute</Link>
     </Header>
