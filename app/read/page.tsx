@@ -2,6 +2,11 @@ import { Section } from "@/components/section/Section";
 import Link from "next/link";
 
 import { allDocuments, DocumentTypes } from "contentlayer/generated";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Read — Osmium OSS",
+};
 
 const getSections = () => {
   const map = new Map<string, DocumentTypes[]>();
