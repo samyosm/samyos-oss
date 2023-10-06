@@ -1,19 +1,19 @@
 // contentlayer.config.ts
-import {defineDocumentType, makeSource} from "contentlayer/source-files";
+import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import remarkGfm from "remark-gfm";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import GithubSlugger from "github-slugger";
-import {DocumentTypes} from "contentlayer/generated";
-import {Heading} from "./app/types/Heading";
+import { DocumentTypes } from "contentlayer/generated";
+import { Heading } from "./app/types/Heading";
 
 const defineDocument = (name: string) => {
   return defineDocumentType(() => ({
     name,
     filePathPattern: `${name.toLowerCase()}/**/*.md`,
     fields: {
-      title: {type: "string", required: true},
-      description: {type: "string", required: true},
+      title: { type: "string", required: true },
+      description: { type: "string", required: true },
     },
     computedFields: {
       url: {
@@ -28,7 +28,7 @@ const defineDocument = (name: string) => {
       index: {
         type: "boolean",
         resolve: () => true,
-      }
+      },
     },
   }));
 };
@@ -37,7 +37,7 @@ const headingResolve = async (doc: DocumentTypes) => {
   const regXHeader = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
   const slugger = new GithubSlugger();
   const headings = Array.from(doc.body.raw.matchAll(regXHeader)).map(
-    ({groups}) => {
+    ({ groups }) => {
       const flag = groups?.flag;
       const content = groups?.content;
       return {
@@ -55,11 +55,11 @@ export const Story = defineDocument("Story");
 export const Policies = defineDocument("Policies");
 
 export const Contribute = defineDocumentType(() => ({
-  name: 'Contribute',
+  name: "Contribute",
   filePathPattern: `contribute/**/*.md`,
   fields: {
-    title: {type: "string", required: true},
-    description: {type: "string", required: false},
+    title: { type: "string", required: true },
+    description: { type: "string", required: false },
   },
   computedFields: {
     url: {
@@ -73,14 +73,41 @@ export const Contribute = defineDocumentType(() => ({
     },
     index: {
       type: "boolean",
-      resolve: () => false
-    }
+      resolve: () => false,
+    },
   },
-}))
+}));
+
+export const Tools = defineDocumentType(() => ({
+  name: "Tools",
+  filePathPattern: `tools/**/*.md`,
+  fields: {
+    title: { type: "string", required: true },
+    description: { type: "string", required: true },
+    license: { type: "string", required: true },
+    link: { type: "string", required: true },
+    rating: { type: "number", required: true },
+  },
+  computedFields: {
+    url: {
+      type: "string",
+      resolve: (post) => `/read/${post._raw.flattenedPath}`,
+    },
+    headings: {
+      type: "json",
+      // @ts-ignore
+      resolve: headingResolve,
+    },
+    index: {
+      type: "boolean",
+      resolve: () => true,
+    },
+  },
+}));
 
 export default makeSource({
   contentDirPath: "posts",
-  documentTypes: [Article, Story, Policies, Contribute],
+  documentTypes: [Article, Tools, Story, Policies, Contribute],
   markdown: {
     remarkPlugins: [
       remarkGfm,

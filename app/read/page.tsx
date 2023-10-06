@@ -1,7 +1,7 @@
-import {Section} from "@/components/section/Section";
+import { Section } from "@/components/section/Section";
 import Link from "next/link";
 
-import {allDocuments, DocumentTypes} from "contentlayer/generated";
+import { allDocuments, DocumentTypes } from "contentlayer/generated";
 
 const getSections = () => {
   const map = new Map<string, DocumentTypes[]>();
@@ -18,7 +18,7 @@ const getSections = () => {
     }
   });
 
-  return Array.from(map, ([name, documents]) => ({name, documents}));
+  return Array.from(map, ([name, documents]) => ({ name, documents }));
 };
 
 const ArticleLink = (props: DocumentTypes) => {
@@ -28,8 +28,7 @@ const ArticleLink = (props: DocumentTypes) => {
       href={props.url}
     >
       <article className="space-y-6 h-full">
-        <h2
-          className="text-xl md:text-xl text-neutral-900 font-medium leading-relaxed group-hover:text-sky-600 line-clamp-2">
+        <h2 className="text-xl md:text-xl text-neutral-900 font-medium leading-relaxed group-hover:text-sky-600 line-clamp-2">
           {props.title}
         </h2>
         <p className="group-hover:text-sky-600 text-xl leading-loose line-clamp-3">
@@ -43,13 +42,13 @@ const ArticleLink = (props: DocumentTypes) => {
 export default function Page() {
   return (
     <div className="space-y-16 mx-8 md:mx-0">
-      {getSections().map((doc, idx) => (
+      {getSections().map((doc) => (
         <Section
           key={doc.name}
           title={doc.name}
           class="grid grid-cols-1 md:grid-cols-2 gap-12"
         >
-          {doc.documents.map((post, idx) => (
+          {doc.documents.map((post) => (
             <ArticleLink
               key={post.title}
               {...post as DocumentTypes}
