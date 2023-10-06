@@ -30,7 +30,7 @@ export const Header = ({ items, children }: HeaderProps) => {
       <div>
         <Link href="/" className="font-medium">Osmium OSS</Link>
       </div>
-      <nav>
+      <nav className="hidden md:block">
         <ul className="flex gap-16">
           {items.map((item) => (
             <li key={item.label}>

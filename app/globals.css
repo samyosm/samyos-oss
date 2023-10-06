@@ -8,7 +8,7 @@
 
 html, body {
     font-family: 'Lexend', sans-serif;
-    @apply text-neutral-600 min-h-screen scroll-pt-32 h-full;
+    @apply text-neutral-600 min-h-screen scroll-pt-32;
 }
 
 ::selection {
