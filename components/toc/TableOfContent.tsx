@@ -34,7 +34,7 @@ export const TOCHeading = (props: TOCHeadingProps) => {
 export const TableOfContent = (props: TableOfContentProps) => {
   const headings = props.headings.filter((h) => h.level <= 3 && h.level != 1);
   return (
-    <aside className="sticky top-32 w-full max-w-sm h-fit max-h-[36rem] overflow-y-auto hidden md:block rounded-lg">
+    <aside className="md:sticky md:top-32 w-full md:max-w-sm h-fit max-h-[36rem] overflow-y-auto rounded-lg">
       <p className="bg-neutral-800 text-neutral-100 text-xl font-medium p-5 sticky top-0">
         Table Of Content
       </p>

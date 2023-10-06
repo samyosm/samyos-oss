@@ -39,8 +39,8 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   return (
     <div className="max-w-7xl mx-auto space-y-32">
-      <div className="flex gap-16">
-        <aside className="sticky top-32 w-full max-w-xs rounded-lg overflow-hidden shadow-md ring-1 ring-inset ring-neutral-300 h-min">
+      <div className="flex md:flex-row flex-col gap-16 mx-5">
+        <aside className="md:sticky md:top-32 w-full md:max-w-xs rounded-lg overflow-hidden shadow-md ring-1 ring-inset ring-neutral-300 h-min">
           <p className="text-lg text-white bg-neutral-900 p-5">Progress</p>
           <Stepper items={items} current={current} />
           <div className="flex p-5 gap-2 pt-0">
@@ -51,7 +51,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
         <div className="flex flex-col gap-16">
           <article
-            className="px-4 md:px-0 w-full prose prose-headings:font-medium prose-h1:border-b-2 prose-h1:pb-6 prose-slate text-xl leading-loose"
+            className="w-full prose prose-headings:font-medium prose-h1:border-b-2 prose-h1:pb-6 prose-slate text-xl leading-loose"
             dangerouslySetInnerHTML={{ __html: post.body.html }}
           />
           <div>

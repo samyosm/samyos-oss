@@ -27,10 +27,10 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto flex justify-between">
+    <div className="max-w-7xl mx-auto flex justify-between md:flex-row flex-col gap-16 md:gap-0 px-5">
       <TableOfContent headings={post.headings} />
       <article
-        className="px-4 md:px-0 w-full prose prose-headings:font-medium prose-h1:border-b-2 prose-h1:pb-6 prose-slate text-xl leading-loose"
+        className="w-full prose prose-headings:font-medium prose-h1:border-b-2 prose-h1:pb-6 prose-slate text-xl leading-loose"
         dangerouslySetInnerHTML={{ __html: post.body.html }}
       />
     </div>
