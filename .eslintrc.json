@@ -1,3 +1,75 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "ignorePatterns": [
+    "**/*"
+  ],
+  "extends": [
+    "google",
+    "eslint:recommended"
+  ],
+  "plugins": [
+    "@nx"
+  ],
+  "rules": {
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js",
+        "*.jsx"
+      ],
+      "rules": {
+        "require-jsdoc": "off",
+        "import/no-extraneous-dependencies": [
+          "off"
+        ],
+        "no-trailing-spaces": [
+          "error"
+        ],
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [
+              "@samyos/oss/contentlayer"
+            ],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": [
+                  "*"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "extends": [
+        "plugin:@nx/typescript"
+      ],
+      "rules": {}
+    },
+    {
+      "files": [
+        "*.js",
+        "*.jsx"
+      ],
+      "extends": [
+        "plugin:@nx/javascript"
+      ],
+      "rules": {}
+    }
+  ]
 }

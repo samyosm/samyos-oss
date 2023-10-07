@@ -1,0 +1,36 @@
+/**
+ * Tailwind CSS imports
+ * View the full documentation at https://tailwindcss.com
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  font-family: 'Lexend', sans-serif;
+  @apply text-neutral-600 min-h-screen scroll-pt-32;
+}
+
+::selection {
+  @apply bg-primary-500 text-white;
+}
+
+.prose {
+  h1, h2, h3,
+  h4, h5, h6 {
+    a {
+      @apply no-underline hover:underline;
+    }
+  }
+}
+
+
+@layer components {
+  .button {
+    @apply bg-primary-600 text-white px-6 py-3 font-medium rounded-2xl hover:bg-primary-600/80 text-center;
+  }
+
+  .soft-button {
+    @apply bg-primary-600/10 text-primary-600 px-6 py-3 font-medium rounded-2xl hover:bg-primary-600/20
+  }
+}

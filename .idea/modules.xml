@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/samyos-oss.iml" filepath="$PROJECT_DIR$/.idea/samyos-oss.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/samyos.iml" filepath="$PROJECT_DIR$/.idea/samyos.iml" />
     </modules>
   </component>
 </project>
